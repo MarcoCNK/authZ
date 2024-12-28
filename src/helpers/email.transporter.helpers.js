@@ -1,13 +1,22 @@
 import nodemailer from 'nodemailer'
+import ENVIRONMENT from '../config/environment.js'
+
 const transportEmail = nodemailer.createTestAccount({
-    service: 'gmial',
+    service: 'gmail',
+    secure: true,
+    logger: true,
+    debug: true,
+    secureConnection: false,
+    host: "127.0.0.1",
+    port: 587,
     tls: {
-        rejectUnauthorized: false
+        rejectUnauthorized: false,
+        minVersion: "TLSv1.2"
     },
     auth: {
-        user: ENVIROMENT.EMAIL_USER,
-        pass: ENVIROMENT.EMAIL_PASSWORD
+        user: ENVIRONMENT.EMAIL_USER,
+        pass: ENVIRONMENT.EMAIL_PASSWORD
     }
 })
 
-export default transportEmail
+export default transportEmail   

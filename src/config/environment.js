@@ -6,12 +6,14 @@ dotenv.config()
 
 process.env.EMAIL_PASSWORD
 
-const ENVIROMENT = {
+console.log(process.env.EMAIL_PASSWORD)
+
+const ENVIRONMENT = {
     EMAIL_PASSWORD: process.env.EMAIL_PASSWORD || '',
     EMAIL_USER: process.env.EMAIL_USER || '',
 }
 
-export default ENVIROMENT
+export default ENVIRONMENT
 
 // npm install nodemailer
 // npm install dotenv
